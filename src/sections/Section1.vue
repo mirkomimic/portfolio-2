@@ -13,8 +13,8 @@
         class="d-flex justify-center align-center pa-0"
       >
         <div 
-          class="card d-flex flex-column justify-center align-center ga-4 pa-4 mr-lg-10 mb-15 mb-lg-0"
-          style="border: 1px solid white; border-radius: 15px; width: 800px; z-index: 0;"
+          class="card card-bg d-flex flex-column justify-center align-center ga-4 pa-4 mr-lg-10 mb-15 mb-lg-0"
+          style="border-radius: 15px; width: 800px; z-index: 0;"
         >
           <h1 class="roboto-mono text-h4">Welcome to My Portfolio</h1>
 
@@ -49,10 +49,11 @@
 import { gsap } from 'gsap'
 import { onMounted, ref } from 'vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
+import ObserverAnimation from '@/assets/observer';
+
+new ObserverAnimation().scrollDown(1)
 
 gsap.registerPlugin(ScrollTrigger) 
-
-const image = ref()
 
 onMounted(() => {
 

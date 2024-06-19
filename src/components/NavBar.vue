@@ -1,6 +1,6 @@
 <template>
-  <v-toolbar id="toolbar" class="bg-transparent position-fixed" elevation="1" style="z-index: 10;" density="comfortable">
-    <v-container>
+  <v-toolbar id="toolbar" class="bg-transparent position-fixed" elevation="1" density="comfortable" style="z-index: 10;">
+    <v-container class="px-lg-15">
       <div class="d-flex align-center h-100">
 
         <div
@@ -116,7 +116,7 @@ onMounted(() => {
 
 <style scoped>
 .glassy2 {
-  background-color: rgba(254, 254, 254, 0.19);
+  background-color: rgba(28, 25, 25, 0.843);
   backdrop-filter: blur(15px);
 }
 </style>
