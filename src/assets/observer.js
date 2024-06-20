@@ -4,8 +4,6 @@ import gsap from 'gsap';
 
 export default class ObserverAnimation {
 
-  sections = document.querySelectorAll('section')
-
   constructor() {
     this.createLenis()
     this.render()
@@ -31,34 +29,21 @@ export default class ObserverAnimation {
     Observer.create({
       target: `#section_${currentSection}`,
       type: "wheel,touch",
-      // onUp: () => {
-      //   if (currentSection == 1) return
 
-      //   this.lenis.scrollTo(`#section_${currentSection - 1}`)
-
-      // },
       onDown: () => {
-        if (currentSection >= 4) return
-
         this.lenis.scrollTo(`#section_${currentSection + 1}`)
-
-        // gsap.to(window, {
-        //   duration: .5,
-        //   scrollTo: `#section_${currentSection + 1}`
-        // });
       },
     });
+
   }
 
   scrollUp(currentSection) {
     Observer.create({
       target: `#section_${currentSection}`,
       type: "wheel,touch",
+
       onUp: () => {
-        // if (currentSection == 1) return
-
         this.lenis.scrollTo(`#section_${currentSection - 1}`)
-
       },
     });
   }

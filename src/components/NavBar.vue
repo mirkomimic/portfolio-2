@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar id="toolbar" class="bg-transparent position-fixed" elevation="1" density="comfortable" style="z-index: 10;">
+  <v-toolbar id="toolbar" class="bg-transparent position-sticky top-0" elevation="1" density="comfortable" style="z-index: 10;">
     <v-container class="px-lg-15">
       <div class="d-flex align-center h-100">
 
@@ -11,14 +11,20 @@
 
         <v-spacer></v-spacer>
 
-        <div class="d-flex align-center ga-4">
-          <div v-for="(item, index) in navItems" :key="index">
+        <v-list 
+          class="d-flex align-center ga-4 bg-transparent"
+        >
+
+          <v-list-item v-for="(item, index) in navItems" :key="index" >
             <v-btn
               v-if="!item.items"
               @click="goToSection(item.section)"
               class="pa-1"
+              :href="`#section_${item.section}`"
+              :active="activeSection === item.section"
               >{{ item.name }}
             </v-btn>
+          
             <v-menu
               v-else
               open-on-hover
@@ -46,20 +52,25 @@
                 </v-list-item>
               </v-list>
             </v-menu>
-          </div>
-        </div>
+          </v-list-item>
+
+        </v-list>
       </div>
     </v-container>
   </v-toolbar>
 </template>
 
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue';
+import { onMounted, ref } from 'vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+
+const observer = ref(null)
+const activeSection = ref(null)
+const sections = ref([1, 2, 3, 4]);
 
 const navItems = [
   {
@@ -88,7 +99,24 @@ const goToSection = (section) => {
 }
 
 onMounted(() => {
+  observer.value = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activeSection.value = parseInt(entry.target.id.split('_')[1])
+      }
+    })
+  }, {
+    threshold: .5
+  })
+
+  sections.value.forEach(section => {
+    const el = document.getElementById(`section_${section}`);
+    if (el) observer.value.observe(el);
+  });
   
+
+  // console.log(observer.observe(document.getElementById("section_4")));
+
   const toolbar = document.querySelector('#toolbar')
   
   gsap.to(toolbar, {

@@ -1,5 +1,5 @@
 <template>
-  <div id="section_4" class="h-screen position-relative bg-grey-darken-4">
+  <section id="section_4" class="h-screen position-relative bg-transparent">
     <v-row class="h-100">
       <v-col 
         class="d-flex align-center justify-center pa-0"
@@ -23,7 +23,7 @@
         </v-form>
       </v-col>
     </v-row>
-  </div>
+  </section>
 </template>
 
 <script setup>

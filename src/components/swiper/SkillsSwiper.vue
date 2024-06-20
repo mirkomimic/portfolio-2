@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen overflow-hidden" >
-    <v-row class="h-100">
+    <v-row class="swiper h-100">
 
       <v-col cols="4" class="h-100">
         <div class="h-100">

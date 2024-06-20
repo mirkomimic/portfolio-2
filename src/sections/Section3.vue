@@ -1,5 +1,5 @@
 <template>
-  <div id="section_3" class="h-screen position-relative bg-grey-darken-4">
+  <section id="section_3" class="h-screen position-relative bg-grey-darken-4">
 
     <div 
       class="card card-bg justify-center pa-4 position-absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto"
@@ -24,7 +24,7 @@
       </ul>
 
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -62,8 +62,8 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#section_3',
-      start: 'center-=180 center',
-      end: 'center center',
+      start: 'center-=200 center',
+      end: 'center-=56 center',
       scrub: true,
     }
   })
@@ -71,6 +71,8 @@ onMounted(() => {
   tl.from('#section_3 .card ul li', {
     opacity: 0,
     stagger: .5,
+  }).to('#section_2 .swiper', {
+    opacity: 0,
   })
 })
 

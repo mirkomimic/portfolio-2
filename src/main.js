@@ -3,6 +3,8 @@ import '@mdi/font/css/materialdesignicons.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import { registerScrollSpy } from 'vue3-scroll-spy';
+import VueScrollactive from 'vue-scrollactive';
 
 // Vuetify
 import 'vuetify/styles'
@@ -20,4 +22,6 @@ const vuetify = createVuetify({
 
 createApp(App)
   .use(vuetify)
+  .use(registerScrollSpy)
+  .use(VueScrollactive)
   .mount('#app')

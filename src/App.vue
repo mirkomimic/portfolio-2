@@ -1,6 +1,6 @@
 <template>
   <MainLayout>
-    <div class="main-bg-img">
+    <div v-scroll-spy class="main-bg-img">
       <NavBar/>
       <Section1/>
       <Section2/>

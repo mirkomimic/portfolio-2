@@ -1,5 +1,8 @@
 <template>
-  <section id="section_1" class="h-screen">
+  <section 
+    id="section_1" 
+    style="height: calc(100vh - 56px);"
+  >
     <v-row class="h-100 ma-0">
       <v-col 
         class="d-flex align-center justify-center pa-0 mx-auto"

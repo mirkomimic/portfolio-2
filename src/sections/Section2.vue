@@ -1,7 +1,7 @@
 <template>
-  <div id="section_2" class="h-screen position-sticky top-0">
+  <section id="section_2" class="h-screen position-sticky top-0">
     <SkillsSwiper/>
-  </div>
+  </section>
 </template>
 
 <script setup>
