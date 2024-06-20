@@ -65,12 +65,12 @@ import { onMounted, ref } from 'vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { useIntersectionObserver } from '@/composables/useInteractionObserver';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
-const observer = ref(null)
-const activeSection = ref(null)
 const sections = ref([1, 2, 3, 4]);
+const { activeSection } = useIntersectionObserver(sections, { threshold: .5 })
 
 const navItems = [
   {
@@ -98,44 +98,44 @@ const goToSection = (section) => {
   })
 }
 
-onMounted(() => {
-  observer.value = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activeSection.value = parseInt(entry.target.id.split('_')[1])
-      }
-    })
-  }, {
-    threshold: .5
-  })
+// onMounted(() => {
+//   observer.value = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         activeSection.value = parseInt(entry.target.id.split('_')[1])
+//       }
+//     })
+//   }, {
+//     threshold: .5
+//   })
 
-  sections.value.forEach(section => {
-    const el = document.getElementById(`section_${section}`);
-    if (el) observer.value.observe(el);
-  });
+//   sections.value.forEach(section => {
+//     const el = document.getElementById(`section_${section}`);
+//     if (el) observer.value.observe(el);
+//   });
   
 
-  // console.log(observer.observe(document.getElementById("section_4")));
+//   // console.log(observer.observe(document.getElementById("section_4")));
 
-  const toolbar = document.querySelector('#toolbar')
+//   const toolbar = document.querySelector('#toolbar')
   
-  gsap.to(toolbar, {
-    scrollTrigger: {
-      target: '#section_1',
-      start: 'top+=300 top',
-      onEnter: () => {
-        toolbar.classList.remove('bg-transparent')
-        toolbar.classList.add('glassy2')
-      },
-      onLeaveBack: () => {
-        toolbar.classList.add('bg-transparent')
-        toolbar.classList.remove('glassy2')
-      }
-    },
+//   gsap.to(toolbar, {
+//     scrollTrigger: {
+//       target: '#section_1',
+//       start: 'top+=300 top',
+//       onEnter: () => {
+//         toolbar.classList.remove('bg-transparent')
+//         toolbar.classList.add('glassy2')
+//       },
+//       onLeaveBack: () => {
+//         toolbar.classList.add('bg-transparent')
+//         toolbar.classList.remove('glassy2')
+//       }
+//     },
     
   
-  })
-})
+//   })
+// })
 
 
 

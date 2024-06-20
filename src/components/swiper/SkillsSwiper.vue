@@ -2,7 +2,7 @@
   <div class="h-screen overflow-hidden" >
     <v-row class="swiper h-100">
 
-      <v-col cols="4" class="h-100">
+      <v-col cols="4" class="h-100 d-none d-lg-block">
         <div class="h-100">
           <swiper
             class="w-100 h-100"
@@ -26,7 +26,7 @@
 
       </v-col>
       
-      <v-col cols="8" class="h-100">
+      <v-col cols="8" class="h-100 mx-auto mx-lg-0">
         <div class="h-100">
           <swiper
             class="h-100 w-100"

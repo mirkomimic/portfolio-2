@@ -1,13 +1,11 @@
 <template>
-  <section id="section_3" class="h-screen position-relative bg-grey-darken-4">
+  <section id="section_3" class="h-screen w-auto position-relative bg-grey-darken-4">
 
     <div 
-      class="card card-bg justify-center pa-4 position-absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto"
+      class="card card-bg justify-center pa-4 position-absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto h-75 w-100 w-md-75"
       style="
         border: 1px solid white; 
         border-radius: 15px; 
-        width: 800px; 
-        height: 550px;
       "
     >
       <h4 class="text-h4 mb-3">

@@ -9,7 +9,7 @@
 }
 
 .caveat-font {
-  font-family: "Caveat", cursive;
+  font-family: "Caveat", cursive !important;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -44,4 +44,8 @@
 .card-bg {
   background-color: #1010104b;
   /* background-color: #d3dae1; */
+}
+
+.line-height-1 {
+  line-height: 20px !important;
 }

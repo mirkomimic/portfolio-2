@@ -6,22 +6,25 @@
     <v-row class="h-100 ma-0">
       <v-col 
         class="d-flex align-center justify-center pa-0 mx-auto"
-        cols="4"
+        cols="12"
+        lg="4"
       >
         <div class="d-flex">
-          <v-img src="images/programming5.webp" width="400" class="image floating ms-5"></v-img>
+          <v-img src="images/programming5.webp" width="400" height="350" class="image floating ms-5"></v-img>
         </div>
       </v-col>
       <v-col
-        class="d-flex justify-center align-center pa-0"
+        class="d-flex justify-center align-center pa-0 mb-10 mb-lg-0"
+        cols="12"
+        lg="8"
       >
         <div 
           class="card card-bg d-flex flex-column justify-center align-center ga-4 pa-4 mr-lg-10 mb-15 mb-lg-0"
           style="border-radius: 15px; width: 800px; z-index: 0;"
         >
-          <h1 class="roboto-mono text-h4">Welcome to My Portfolio</h1>
+          <h1 class="roboto-mono text-h5 text-lg-h4">Welcome to My Portfolio</h1>
 
-          <h3 class="caveat-font">Hi, I'm 
+          <h3 class="caveat-font text-h4">Hi, I'm 
             <span class="caveat-font text-light-blue-darken-1">M</span>
             <span class="caveat-font text-light-blue-darken-1">i</span>
             <span class="caveat-font text-light-blue-darken-1">r</span>
